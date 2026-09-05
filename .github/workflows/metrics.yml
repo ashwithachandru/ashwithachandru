@@ -30,6 +30,4 @@ jobs:
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
 
-          # ---- Teal color scheme ----
-          config_theme: dark
           config_display: large
