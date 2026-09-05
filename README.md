@@ -1,46 +1,33 @@
-<!-- ================= HEADER ================= -->
+name: Metrics Dashboard
 
-<h1 align="center">Hi 👋, I'm Ashwitha C</h1>
-<h3 align="center">Data Analyst • AI & ML Enthusiast •  Developer • Cloud & DevOps Enthusiast </h3>
+on:
+  schedule:
+    - cron: "0 0 * * *"    # refreshes once a day
+  workflow_dispatch:        # lets you trigger it manually anytime
 
----
+jobs:
+  build-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: ashwithachandru
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Asia/Kolkata
 
-## 📌 Professional Summary
+          # ---- Languages breakdown ----
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_limit: 8
+          plugin_languages_threshold: 0%
 
-I am passionate about Data Analytics, Machine Learning, Artificial Intelligence, Generative AI, and Full Stack Development, with a focus on strengthening skills in Cloud Computing and DevOps for scalable application development.
+          # ---- Isometric contribution calendar (the unique bit) ----
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
 
----
-## 🔗 Find Me online
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/ashwitha-c/">
-    <img src="https://img.shields.io/badge/LinkedIn-Ashwitha-blue?style=for-the-badge&logo=linkedin"/>
-  </a>
-  <a href="mailto:ashwithac22@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-Email-red?style=for-the-badge&logo=gmail&logoColor=white"/>
-  </a>
-</p>
-
----
-
-## 🛠️ Technical Skills
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=python,java,mysql,firebase,androidstudio,react,nodejs,typescript,express,netlify,vercel,angular,mongodb,streamlit,linux,docker,kubernetes,jenkins,wireshark&perline=7" />
-</p>
-<p align="center">
-  <img src="https://img.shields.io/badge/PowerBI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Burp%20Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Autopsy-Digital%20Forensics-0A0A0A?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/SonarQube-Code%20Quality-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white"/>
-</p>
-</p>
-
-## 🚀 Development Activity
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=ashhwiithac22&theme=tokyonight&hide_border=true&ring=ff69b4&fire=ff69b4&currStreakLabel=ff69b4" />
-</p>
-
----
+          config_display: large
