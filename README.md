@@ -41,9 +41,4 @@ I am passionate about Data Analytics, Machine Learning, Artificial Intelligence,
   <img src="https://streak-stats.demolab.com?user=ashwithachandru&hide_border=true&background=0D1117&ring=14B8A6&fire=14B8A6&currStreakLabel=14B8A6&currStreakNum=FFFFFF&sideNums=FFFFFF&sideLabels=c9d1d9&dates=8b949e" />
 </p>
 
-<!-- Self-generated metrics dashboard: stats + top languages + isometric contribution calendar, all in one image, hosted on your own repo -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ashwithachandru/ashwithachandru/main/metrics.svg" />
-</p>
-
 ---
